@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <base target="_blank" rel="noopener noreferrer" />
+
+  <title>FarmScan</title>
+  <meta name="author" content="Carston Wiebe, Cale Sigerson" />
+  <meta name="description" content="Project for Cornhacks 2025 2: Bananahacks" />
+  <meta name="generator" content="flask" />
+
+  <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1>FarmScan</h1>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <ul>
+      <li>Carston Wiebe &amp; Cale Sigerson</li>
+      <li>Cornhacks 2025 2: Bananahacks</li>
+      <li>Built with <a href="https://flask.palletsprojects.com">Flask</a>, <a
+          href="https://pypi.org/project/pyshp">PyShp</a>, and data from the <a
+          href="https://websoilsurvey.nrcs.usda.gov/app/">Web Soil Survey</a></li>
+    </ul>
+  </footer>
+</body>
+
+</html>
