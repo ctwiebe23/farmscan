@@ -6,3 +6,12 @@ install:
 
 serve:
 	{{BIN}}flask run --debug
+
+venv:
+	python3 -m venv venv
+
+clean:
+	[ ! -d ./__pycache__ ] || rm -r ./__pycache__
+	[ ! -d ./.mypy_cache ] || rm -r ./.mypy_cache
+	[ ! -d ./app/__pycache__ ] || rm -r ./app/__pycache__
+	[ ! -d ./venv ] || rm -rf ./venv

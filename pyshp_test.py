@@ -1,6 +1,6 @@
 import shapefile
 
-sf = shapefile.Reader("./data/soilmu_a_ne175")
+sf = shapefile.Reader("./app/data/soilmu_a_ne175")
 print(sf.bbox)
 shapes = sf.shapes()
 print(len(shapes))
