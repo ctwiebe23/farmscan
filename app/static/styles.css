@@ -1,3 +1,14 @@
+@font-face {
+  font-family: KohSantepheap;
+  src: url('/static/KohSantepheap-Bold.ttf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: KohSantepheap;
+  src: url('/static/KohSantepheap-Regular.ttf');
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +26,7 @@ html {
   --rule: 2px;
 
   --font-size: 14pt;
-  --font: sans-serif;
+  --font: KohSantepheap, serif;
 
   font: var(--font-size) / 1.5 var(--font);
   hyphens: auto;
@@ -47,23 +58,14 @@ main {
 
 footer {
   grid-area: foot;
-  text-align: center;
   font-size: 0.8rem;
-  padding: 16px;
+  padding: 8px 16px;
   background: var(--text);
   color: var(--bg);
 
   ul {
     li {
-      display: inline;
-
-      &::after {
-        content: " | ";
-        color: var(--bg-faded);
-      }
-      &:last-child::after {
-        content: "";
-      }
+      display: block;
     }
   }
 }
