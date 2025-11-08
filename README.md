@@ -11,6 +11,7 @@ Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
 - [Watchdog](https://pythonhosted.org/watchdog/) — Enables hot reloading of the
   page during development.
 - [PyShp](https://pypi.org/project/pyshp/) — Reads and writes Shapefiles.
+- [Sqlite3](https://sqlite.org) — SQL database.
 
 # Index
 
@@ -20,3 +21,7 @@ Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
   - `./app/__init__.py` contains the Flask entrypoint and defines the app routes.
 - `./justfile` contains the shell commands needed to run and develop the app.
 - `./REQUIREMENTS.txt` contains all the Python dependencies needed by `pip`
+
+# Processes
+
+## Getting data
