@@ -3,6 +3,8 @@
 Web application that identifies ideal plots of farmland within a given area
 inside the continental United States.
 
+Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
+
 # Dependencies
 
 - [Flask](https://flask.palletsprojects.com) — Python webapp framework.

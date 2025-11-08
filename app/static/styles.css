@@ -59,7 +59,7 @@ footer {
 
       &::after {
         content: " | ";
-        color:var(--bg-faded)
+        color: var(--bg-faded);
       }
       &:last-child::after {
         content: "";
