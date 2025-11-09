@@ -6,9 +6,13 @@ app = Flask(__name__)
 @app.route("/")
 def index():
   return render_template("index.html")
-  
+
+@app.route("/bbox")
+def bbox_form():
+  return render_template("bbox.html")
+
 # json apis
-@app.route("/counties/<counties>")
+@app.route("/api/counties/<counties>")
 def get_counties(counties: str):
   counties = counties.split(",")
   return counties
