@@ -1,12 +1,12 @@
 @font-face {
   font-family: KohSantepheap;
-  src: url('/static/KohSantepheap-Bold.ttf');
+  src: url("/static/KohSantepheap-Bold.ttf");
   font-weight: bold;
 }
 
 @font-face {
   font-family: KohSantepheap;
-  src: url('/static/KohSantepheap-Regular.ttf');
+  src: url("/static/KohSantepheap-Regular.ttf");
 }
 
 * {
@@ -19,7 +19,7 @@ html {
   --text: #333;
   --text-faded: #777;
   --bg: #fff;
-  --bg-faded: #999;
+  --bg-faded: #ddd;
   --error: #c44;
   --link: #67f;
 
@@ -48,22 +48,52 @@ body {
 
 header {
   grid-area: head;
-  padding: 16px;
+  padding: 16px 32px;
+
+  h1 {
+    margin-left: 1.5em;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      left: -1.5em;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1em;
+      width: 1em;
+      content: "";
+      background-image: url("/static/favicon.svg");
+      background-size: 1em 1em;
+    }
+
+    a {
+      color: var(--text);
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 main {
   grid-area: main;
   padding: 32px;
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
 }
 
 footer {
   grid-area: foot;
   font-size: 0.8rem;
-  padding: 8px 16px;
+  padding: 8px 32px;
   background: var(--text);
   color: var(--bg);
 
   ul {
+    margin: 0;
     li {
       display: block;
     }
@@ -85,5 +115,40 @@ a {
 
   &:hover {
     text-decoration: underline 1px solid currentColor;
+  }
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+input,
+button {
+  display: block;
+  margin-bottom: 8px;
+  font: var(--font-size) / 1.5 var(--font);
+}
+
+label {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-faded);
+  &::after {
+    content: ":";
+  }
+}
+
+button {
+  padding: 4px 8px;
+  background: none;
+  border-radius: 1em;
+  border: var(--rule) solid currentColor;
+
+  &:hover {
+    background: var(--bg-faded);
+  }
+  &:active {
+    color: var(--bg);
+    background: var(--text);
   }
 }

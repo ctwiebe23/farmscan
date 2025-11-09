@@ -5,19 +5,25 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light" />
-  <base target="_blank" rel="noopener noreferrer" />
+  <base rel="noopener noreferrer" />
 
-  <title>FarmScan</title>
+  <title>{% if subtitle is defined %}{{ subtitle }} — {% endif %}FarmScan</title>
   <meta name="author" content="Carston Wiebe, Cale Sigerson" />
   <meta name="description" content="Project for Cornhacks 2025 2: Bananahacks" />
   <meta name="generator" content="flask" />
 
   <link rel="stylesheet" type="text/css" href="/static/styles.css" />
+  <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+  <link rel="shortcut icon" href="/static/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="FarmScan" />
+  <link rel="manifest" href="/static/site.webmanifest" />
 </head>
 
 <body>
   <header>
-    <h1>FarmScan</h1>
+    <h1><a href="/">FarmScan</a></h1>
   </header>
 
   <main>
