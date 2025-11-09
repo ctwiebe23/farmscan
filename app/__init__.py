@@ -10,18 +10,22 @@ app = Flask(__name__)
 #=============================================================================#
 @app.route("/")
 def index():
+  "The landing page."
   return render_template("index.html")
 
 @app.route("/bbox")
 def bbox_form():
+  "Input form that prompts the user for coordinates."
   return render_template("bbox.html", subtitle="Lat & Lon")
 
 @app.route("/map")
 def map_form():
+  "Interactive map to select coordinates."
   return render_template("map.html", subtitle="Map")
 
 @app.route("/result")
 def result():
+  "The results of searching a given bounding box."
   minlon = get_search_param("minlon", float)
   minlat = get_search_param("minlat", float)
   maxlon = get_search_param("maxlon", float)
@@ -30,8 +34,6 @@ def result():
   if any(map(lambda x: x is None, [minlat, maxlat, minlon, maxlon])):
     abort(400)
   
-  # viable_shapes = find_best_viable_shapes((maxlon, minlat, minlon, maxlat))
-  
   return render_template("result.html", subtitle="Results")
 
 #=============================================================================#
@@ -39,6 +41,7 @@ def result():
 #=============================================================================#
 @app.route("/api/find-best/<bbox>")
 def find_best_api(bbox: str):
+  "Finds the best farmland within the given bounding box."
   bbox = bbox.split(",")
   
   if len(bbox) != 4:
