@@ -79,7 +79,7 @@ down to just 21 surveys. In our criteria for determining if a beneficial score w
 
 ### Resources
 
-https://soiltesting.cahnr.uconn.edu/soil-ph-and-management-suggestions/
-https://shunpoly.com/article/what-does-a-high-plasticity-index-mean
-https://en.wikipedia.org/wiki/Soil
+- <https://soiltesting.cahnr.uconn.edu/soil-ph-and-management-suggestions/>
+- <https://shunpoly.com/article/what-does-a-high-plasticity-index-mean>
+- <https://en.wikipedia.org/wiki/Soil>
 
