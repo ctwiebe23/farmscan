@@ -1,5 +1,4 @@
 import { map, polygon, tileLayer } from "leaflet";
-import Rainbow from "rainbowvis.js";
 
 const main = async () => {
   const submit_button = document.getElementById("submit");
