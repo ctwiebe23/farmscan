@@ -76,10 +76,17 @@ down to just 21 surveys. In our criteria for determining if a beneficial score w
 - Balanced plasticity index (15-35)
 - High organic matter composition
 
-
 ### Resources
 
 - <https://soiltesting.cahnr.uconn.edu/soil-ph-and-management-suggestions/>
 - <https://shunpoly.com/article/what-does-a-high-plasticity-index-mean>
 - <https://en.wikipedia.org/wiki/Soil>
 
+## Rendering the Map
+
+Once the best viable locations for farmland have been discovered, the top three
+groups are rendered on the map.
+
+Originally, only the very best selection was chosen and then zoomed to, but it
+was determined that it would be better to give more options to the user and
+allow them to see a gradient of values.
