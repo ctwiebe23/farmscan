@@ -56,7 +56,6 @@ const main = async () => {
   for (const score of api_resp.scores) {
     for (const polygon_points of score) {
       polygon(polygon_points, { color: colors[i] }).addTo(leaflet_map);
-      console.log(colors[i]);
     }
     i++;
   }
