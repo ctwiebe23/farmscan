@@ -61,8 +61,6 @@ def find_best_api(bbox: str):
   scored_shapes.sort(key=lambda x: x[0], reverse=True)
   scored_shapes = scored_shapes[:3]
   
-  # viable_bbox = get_bbox_from_shape_records(viable_shapes)
-
   return {
     "scores": scored_shapes,
     "maxlon": bbox[0],
