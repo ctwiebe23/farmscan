@@ -19,7 +19,7 @@ def result():
   maxlon = request.args.get("maxlon", float)
   return render_template("result.html", minlat=minlat, maxlat=maxlat, maxlon=maxlon, minlon=minlon)
 
-# errors
+# error handling
 @app.errorhandler(404)
 def error_404(error):
   return render_template("404.html"), 404
