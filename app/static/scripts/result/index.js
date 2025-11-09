@@ -1,7 +1,13 @@
 import { map, tileLayer } from "leaflet";
 
 const main = () => {
-  const leaflet_map = map("leaflet-map").setView([51.505, -0.09], 13);
+  const params = new URLSearchParams(window.location.search);
+  const bounds = [
+    [params.get("minlat"), params.get("minlon")],
+    [params.get("maxlat"), params.get("maxlon")],
+  ];
+
+  const leaflet_map = map("leaflet-map").fitBounds(bounds);
 
   const tiles = tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,

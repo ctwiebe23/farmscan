@@ -23,7 +23,7 @@ html {
   --error: #c44;
   --link: #67f;
 
-  --rule: 2px;
+  --rule: 1px;
 
   --font-size: 14pt;
   --font: KohSantepheap, serif;
@@ -127,6 +127,11 @@ button {
   display: block;
   margin-bottom: 8px;
   font: var(--font-size) / 1.5 var(--font);
+}
+
+input[type="number"] {
+  padding: 4px 8px;
+  border: var(--rule) solid var(--text-faded);
 }
 
 label {

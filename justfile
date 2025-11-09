@@ -1,6 +1,10 @@
 # the path to your venv.  If none, use an empty string
 BIN := './venv/bin/'
 
+[no-cd]
+pack FILE:
+	npx webpack ./{{FILE}} -o .
+
 install:
 	{{BIN}}pip install -r ./REQUIREMENTS.txt
 
