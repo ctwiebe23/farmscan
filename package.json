@@ -1,0 +1,26 @@
+{
+  "name": "farmscan",
+  "version": "0.0.0",
+  "description": "Identifies ideal plots of farmland within the US",
+  "homepage": "https://github.com/ctwiebe23/farmscan#readme",
+  "bugs": {
+    "url": "https://github.com/ctwiebe23/farmscan/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctwiebe23/farmscan.git"
+  },
+  "license": "MIT",
+  "author": "Carston Wiebe, Cale Sigerson",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}

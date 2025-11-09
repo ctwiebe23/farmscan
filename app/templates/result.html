@@ -1,11 +1,22 @@
 {% extends "layout.html" %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="/static/styles/leaflet.css" />
+<script type="module" src="/static/scripts/result/main.js"></script>
+{% endblock %}
 {% block content %}
 
+<div id="leaflet-map"></div>
+
 <dl>
-  <dt>Min lat</dt><dd>{{ minlat }}</dd>
-  <dt>Max lat</dt><dd>{{ maxlat }}</dd>
-  <dt>Min lon</dt><dd>{{ minlon }}</dd>
-  <dt>Max lon</dt><dd>{{ maxlon }}</dd>
+  <dt>Min lat</dt>
+  <dd>{{ minlat }}</dd>
+  <dt>Max lat</dt>
+  <dd>{{ maxlat }}</dd>
+  <dt>Min lon</dt>
+  <dd>{{ minlon }}</dd>
+  <dt>Max lon</dt>
+  <dd>{{ maxlon }}</dd>
 </dl>
+
 
 {% endblock %}

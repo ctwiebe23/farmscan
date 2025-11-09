@@ -11,6 +11,7 @@ Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
 - [Watchdog](https://pythonhosted.org/watchdog/) — Enables hot reloading of the
   page during development.
 - [PyShp](https://pypi.org/project/pyshp/) — Reads and writes Shapefiles.
+- [Leaflet](https://leafletjs.com/) — Renders a map in JavaScript.
 - [Sqlite3](https://sqlite.org) — SQL database.
 
 # Index

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1 class="text-error">ERROR {{ error_code }} : {{ error_message }}</h1>
+{% if error_body is defined %}
+<p>{{ error_body }}</p>
+{% endif %}
+<br />
+<br />
+<p>Go <a href="/">home</a>?</p>
+
+{% endblock %}
