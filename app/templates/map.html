@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="/static/styles/leaflet.css" />
+<script type="module" src="/static/scripts/map/main.js"></script>
+{% endblock %}
+{% block content %}
+
+<form action="/result" method="get" name="map">
+  <div id="leaflet-map"></div>
+
+  <button type="submit">
+    Search
+  </button>
+</form>
+
+{% endblock %}
