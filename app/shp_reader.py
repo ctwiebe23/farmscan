@@ -8,8 +8,6 @@ cursor = conn.cursor()
 shapes = sf.shapes()
 records = sf.records()
 
-print(len(shapes))
-
 enclosedShapes = shapefile.ShapeRecords([])
 
 for (shape, record) in zip(shapes, records):
@@ -21,7 +19,7 @@ maxViabilityScore = 0;
 viableShapes = shapefile.ShapeRecords([])
 for shapefile.ShapeRecord in enclosedShapes:
     viabilityScore = 0;
-    query = "select tfact,flodfreqdcd,iccdcdpct,ph1to1h2o_r,pi_r from joined_layer where mukey = ?"
+    query = "select tfact,flodfreqdcd,iccdcdpct,ph1to1h2o_r,pi_r,om_r from joined_layer where mukey = ?"
     mukey = shapefile.ShapeRecord.record[3]
     
     if mukey is None:
@@ -34,14 +32,13 @@ for shapefile.ShapeRecord in enclosedShapes:
         soilCapability = result[2]
         pHLevel = result[3]
         pIndex = result[4]
+        organicMatter = result[5]
         
         if result is None:
             print("invalid query")
         elif (tfact is None):
             print(shapefile.ShapeRecord.record[3])
-        elif (not tfact):
-            print("no value :(")
-        else:
+        elif (tfact):
             if int(tfact) > 4:
                 viabilityScore += 1
         
@@ -64,6 +61,11 @@ for shapefile.ShapeRecord in enclosedShapes:
                 if (float(pIndex) > 15 and float(pIndex) < 35):
                     viabilityScore += 1
         
+        if (organicMatter is not None and organicMatter):
+            if isinstance(float(organicMatter), float):
+                if (float(organicMatter) >= 3 and float(organicMatter) <= 6):
+                    viabilityScore += 1
+        
         if viabilityScore < 0:
             viabilityScore = 0
         if viabilityScore > maxViabilityScore:
@@ -72,6 +74,3 @@ for shapefile.ShapeRecord in enclosedShapes:
             viableShapes.append(shapefile.ShapeRecord)
         elif viabilityScore == maxViabilityScore:
             viableShapes.append(shapefile.ShapeRecord)
-            
-print(maxViabilityScore)
-print(len(viableShapes))
