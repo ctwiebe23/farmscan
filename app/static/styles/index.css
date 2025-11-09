@@ -173,6 +173,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 8rem;
+  white-space: nowrap;
 
   span {
     animation:load 0.6s infinite alternate;
