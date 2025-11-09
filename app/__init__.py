@@ -14,6 +14,10 @@ def index():
 def bbox_form():
   return render_template("bbox.html", subtitle="Lat & Lon")
 
+@app.route("/map")
+def map_form():
+  return render_template("map.html", subtitle="Map")
+
 @app.route("/result")
 def result():
   minlat = get_search_param("minlat", float)
