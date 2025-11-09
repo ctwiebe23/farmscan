@@ -7,10 +7,23 @@ Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
 
 # Running FarmScan
 
-Navigate to the root directory (that contains this README) and run:
+To install everything needed to run FarmScan, clone this git repo and navigate
+to the directory that contains this README.  From that directory, run:
+
+```
+pip install -r ./REQUIREMENTS.txt
+```
+
+to gather all Python dependencies.  To serve the website, then run:
 
 ```
 flask run
+```
+
+To develop the website, you will also need to install the NPM dependencies:
+
+```
+npm install
 ```
 
 # Dependencies
@@ -21,6 +34,11 @@ flask run
 - [PyShp](https://pypi.org/project/pyshp/) — Reads and writes Shapefiles.
 - [Leaflet](https://leafletjs.com/) — Renders a map in JavaScript.
 - [Sqlite3](https://sqlite.org) — SQL database.
+
+# Developer Dependencies
+
+- [Webpack](https://webpack.js.org/) — Packs JavaScript modules into single
+  files.
 
 # Index
 
