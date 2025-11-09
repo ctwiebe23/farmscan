@@ -130,7 +130,7 @@ def get_bbox_from_shape_records(shape_records: shapefile.ShapeRecords) -> shapef
       
   return (minlon, minlat, maxlon, maxlat)
     
-def find_best_viable_shapes(bbox: shapefile.BBox) -> shapefile.ShapeRecords:
+def find_best_viable_shapes(bbox: shapefile.BBox) -> dict[float: shapefile.ShapeRecords]:
   "Finds the best viables shapes within the bounding box."
   shape_file = shapefile.Reader(os.getcwd() + "/data/soilmu_a_ne175")
   conn = get_db()
@@ -144,6 +144,7 @@ def find_best_viable_shapes(bbox: shapefile.BBox) -> shapefile.ShapeRecords:
         
   max_viability_score = 0
   viable_shape_records = shapefile.ShapeRecords([])
+  scored_shape_records = {float: shapefile.ShapeRecords([])}
   for shape_record in enclosed_shapes:
     viability_score = 0
     query = "select tfact,flodfreqdcd,iccdcdpct,ph1to1h2o_r,pi_r,om_r from joined_layer where mukey = ?"
@@ -197,6 +198,7 @@ def find_best_viable_shapes(bbox: shapefile.BBox) -> shapefile.ShapeRecords:
         viability_score = 0
       if viability_score > max_viability_score:
         max_viability_score = viability_score
+        scored_shape_records[viability_score] = viable_shape_records
         viable_shape_records.clear()
         viable_shape_records.append(shape_record)
       elif viability_score == max_viability_score:
