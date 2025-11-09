@@ -67,6 +67,16 @@ For each survery within the givin bounding box, the algorithm checked certain re
 was attributed to that survery. By looking through multiple records that existed for most surveys, in our initial area, we were able to reduce our initial surverys (about 8400)
 down to just 21 surveys. In our criteria for determining if a beneficial score would be gievn to each survey, we used thresholds that were supported by online resources.
 
+### Criteria
+
+- High soil loss tolerance factor
+- Low flood frequency
+- High Irrigated capability class
+- Balanced pH level (6-7.5)
+- Balanced plasticity index (15-35)
+- High organic matter composition
+
+
 ### Resources
 
 https://soiltesting.cahnr.uconn.edu/soil-ph-and-management-suggestions/
