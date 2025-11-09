@@ -5,7 +5,7 @@ inside the continental United States.
 
 Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
 
-# Running
+# Running FarmScan
 
 Navigate to the root directory (that contains this README) and run:
 
@@ -28,6 +28,10 @@ flask run
   - `./app/static` contains static files like CSS, JavaScript, and images.
   - `./app/templates` contains Jinja templates, mostly for HTML pages.
   - `./app/__init__.py` contains the Flask entrypoint and defines the app routes.
+- `./data` contains shapefiles.
+- `./db` contains the SQLite3 database.
+- `./resources` contains unneeded files that were a part of the development of
+  the app.
 - `./justfile` contains the shell commands needed to run and develop the app.
 - `./REQUIREMENTS.txt` contains all the Python dependencies needed by `pip`
 
