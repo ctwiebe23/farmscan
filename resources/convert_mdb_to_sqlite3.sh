@@ -2,6 +2,12 @@
 
 # based on <https://acaird.github.io/2025/06/12/convert-msaccess-mdb-to-sqlite>
 
+# you need to install mdbtools using homebrew:
+#
+#     brew install mdbtools
+#
+# and sqlite3
+
 CMDFILE=sqlitecmds.txt
 MDBFILE=./soildb_NE_2003.mdb
 SQLFILE=./database.db
@@ -35,5 +41,6 @@ for table in $TABLES; do
     echo .import --skip 1 "./csv/${table}.csv" "$SQLTABLE" >> "$CMDFILE"
     echo "exported table: $table / $SQLTABLE"
 done
+
 echo "importing tables into SQLite"
 sqlite3 database.db < "$CMDFILE"
