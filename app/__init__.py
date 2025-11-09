@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -11,11 +11,13 @@ def index():
 def bbox_form():
   return render_template("bbox.html")
 
-# json apis
-@app.route("/api/counties/<counties>")
-def get_counties(counties: str):
-  counties = counties.split(",")
-  return counties
+@app.route("/result")
+def result():
+  minlat = request.args.get("minlat", float)
+  maxlat = request.args.get("maxlat", float)
+  minlon = request.args.get("minlon", float)
+  maxlon = request.args.get("maxlon", float)
+  return render_template("result.html", minlat=minlat, maxlat=maxlat, maxlon=maxlon, minlon=minlon)
 
 # errors
 @app.errorhandler(404)
