@@ -12,13 +12,14 @@
   <meta name="description" content="Project for Cornhacks 2025 2: Bananahacks" />
   <meta name="generator" content="flask" />
 
-  <link rel="stylesheet" type="text/css" href="/static/styles.css" />
-  <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
-  <link rel="shortcut icon" href="/static/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+  <link rel="stylesheet" type="text/css" href="/static/styles/index.css" />
+  <link rel="icon" type="image/png" href="/static/images/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/images/favicon.svg" />
+  <link rel="shortcut icon" href="/static/images/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="FarmScan" />
   <link rel="manifest" href="/static/site.webmanifest" />
+  {% block links %}{% endblock %}
 </head>
 
 <body>
@@ -38,6 +39,7 @@
         Built with
         <a href="https://flask.palletsprojects.com">Flask</a>,
         <a href="https://pypi.org/project/pyshp">PyShp</a>,
+        <a href="https://leafletjs.com/">Leaflet</a>,
         <a href="https://sqlite.org/">SQLite3</a>, and data from the
         <a href="https://websoilsurvey.nrcs.usda.gov/app/">Web Soil Survey</a>
       </li>
