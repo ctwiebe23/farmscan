@@ -48,7 +48,7 @@ body {
 
 header {
   grid-area: head;
-  padding: 16px 32px;
+  padding: 16px 32px 0 32px;
 
   h1 {
     margin-left: 1.5em;
@@ -102,6 +102,10 @@ footer {
 
 *.text-error {
   color: var(--error);
+}
+
+*.hidden {
+  display: none;
 }
 
 ul,
@@ -160,4 +164,32 @@ button {
 
 #leaflet-map {
   height: 400px;
+  margin-block: 32px;
+}
+
+#loading-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+
+  span {
+    animation:load 0.6s infinite alternate;
+  }
+  span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes load {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
 }

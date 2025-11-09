@@ -6,17 +6,24 @@ const main = () => {
     console.error("no submit button");
     return;
   }
+  const loading_animation = document.getElementById("loading-animation");
+  if (!loading_animation) {
+    console.error("loading animation not found");
+    return;
+  }
 
+  loading_animation.classList.remove("hidden");
   const leaflet_map = map("leaflet-map").fitBounds([
     [41.4, -99],
     [41.7, -98],
   ]);
 
-  const tiles = tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(leaflet_map);
+  loading_animation.classList.add("hidden");
 
   submit_button.addEventListener("click", () => {
     const bounds = leaflet_map.getBounds();
