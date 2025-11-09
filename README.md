@@ -38,3 +38,20 @@ flask run
 # Processes
 
 ## Getting data
+
+All of our data was taken from https://websoilsurvey.nrcs.usda.gov/app/WebSoilSurvey.aspx and was intially processed in QGIS. Using QGIS
+we created a SQLite table with all the data that we would need for the county we chose. These table records could then be linked to specific surveys
+conducted in the county. 
+
+## Farmland Viability Algorithm
+
+For each survery within the givin bounding box, the algorithm checked certain records to see if their values were deternimed to be beneficial and if so, a "viability score"
+was attributed to that survery. By looking through multiple records that existed for most surveys, in our initial area, we were able to reduce our initial surverys (about 8400)
+down to just 21 surveys. In our criteria for determining if a beneficial score would be gievn to each survey, we used thresholds that were supported by online resources.
+
+### Resources
+
+https://soiltesting.cahnr.uconn.edu/soil-ph-and-management-suggestions/
+https://shunpoly.com/article/what-does-a-high-plasticity-index-mean
+https://en.wikipedia.org/wiki/Soil
+
