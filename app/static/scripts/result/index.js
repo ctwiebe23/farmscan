@@ -1,4 +1,5 @@
 import { map, polygon, tileLayer } from "leaflet";
+import Rainbow from "rainbowvis.js";
 
 const main = async () => {
   const submit_button = document.getElementById("submit");
@@ -28,7 +29,7 @@ const main = async () => {
       .catch((reason) => console.log(reason))) || {};
 
   let bounds;
-  if (api_resp.polygons.length == 0) {
+  if (api_resp.scores.length == 0) {
     bounds = [
       [params.get("minlat"), params.get("minlon")],
       [params.get("maxlat"), params.get("maxlon")],
@@ -50,9 +51,16 @@ const main = async () => {
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(leaflet_map);
 
-  for (const polygon_points of api_resp.polygons) {
-    polygon(polygon_points, { color: "green" }).addTo(leaflet_map);
+  let i = 0;
+  const colors = ["#4c4", "#cc4", "#c44"];
+  for (const score of api_resp.scores) {
+    for (const polygon_points of score) {
+      polygon(polygon_points, { color: colors[i] }).addTo(leaflet_map);
+      console.log(colors[i]);
+    }
+    i++;
   }
+
   loading_animation.classList.add("hidden");
 
   submit_button.addEventListener("click", () => {
