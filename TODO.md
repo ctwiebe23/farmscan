@@ -5,3 +5,4 @@
 - Show more info
 - Finish README
 - Desc in index
+- Page memory
