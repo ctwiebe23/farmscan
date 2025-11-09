@@ -5,6 +5,14 @@ inside the continental United States.
 
 Created by Carston Wiebe and Cale Sigerson for Cornhacks 2025 2: Bananahacks.
 
+# Running
+
+Navigate to the root directory (that contains this README) and run:
+
+```
+flask run
+```
+
 # Dependencies
 
 - [Flask](https://flask.palletsprojects.com) — Python webapp framework.

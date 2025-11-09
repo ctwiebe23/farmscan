@@ -1,8 +1,8 @@
 import shapefile
 import sqlite3
 
-sf = shapefile.Reader("data/soilmu_a_ne175.shp")
-conn = sqlite3.connect('db/soil_data.sqlite')
+sf = shapefile.Reader("../data/soilmu_a_ne175.shp")
+conn = sqlite3.connect('../db/soil_data.sqlite')
 cursor = conn.cursor()
 
 shapes = sf.shapes()
@@ -74,3 +74,6 @@ for shapefile.ShapeRecord in enclosedShapes:
             viableShapes.append(shapefile.ShapeRecord)
         elif viabilityScore == maxViabilityScore:
             viableShapes.append(shapefile.ShapeRecord)
+            
+print(maxViabilityScore)
+print(len(viableShapes))

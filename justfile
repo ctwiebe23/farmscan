@@ -3,7 +3,7 @@ BIN := './venv/bin/'
 
 [no-cd]
 pack FILE:
-	npx webpack ./{{FILE}} -o . --mode production
+	npx webpack ./{{FILE}} -o . --mode production -w
 
 install:
 	{{BIN}}pip install -r ./REQUIREMENTS.txt
